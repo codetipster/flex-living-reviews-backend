@@ -1,0 +1,35 @@
+#directories
+/dist
+/build
+/tmp
+/out-tsc
+/exports
+/node_modules
+/coverage
+
+# development files
+.env
+.envrc
+**/*.log
+
+# build files
+server.bundle.js
+crash.js
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# user-specific settings
+.vscode
+.idea
+/.python-version
+CLAUDE.md
+
+
+# auto-generated documentation
+/orm/erd.svg
+
+# wallet files
+/exports/wallets.zip
+/exports/referrals.zip
