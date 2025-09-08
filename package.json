@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "Flex Living Reviews Dashboard API",
   "main": "dist/src/server.js",
+  "_moduleAliases": {
+    "@": "dist/src"
+  },
   "engines": {
     "npm": "^10.9.2",
     "node": "^22.13.0"
   },
   "scripts": {
     "dev": "nodemon --exec ts-node src/server.ts",
-    "start": "node dist/src/server.js",
+    "start": "node -r module-alias/register dist/src/server.js",
     "start:dev": "ts-node src/server.ts",
     "build": "tsc --project tsconfig.prod.json",
     "lint:dev": "npx eslint . --fix && npx prettier --write --log-level warn .",
@@ -33,6 +36,7 @@
     "jsonwebtoken": "^9.0.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
+    "module-alias": "^2.2.3",
     "pg": "^8.11.1",
     "pg-hstore": "^2.3.4",
     "reflect-metadata": "^0.2.1",

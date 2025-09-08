@@ -2,7 +2,20 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "types": ["node"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/types/*": ["src/@types/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/services/*": ["src/services/*"],
+      "@/database/*": ["src/database/*"],
+      "@/controllers/*": ["src/controllers/*"],
+      "@/middlewares/*": ["src/middlewares/*"],
+      "@/routes/*": ["src/routes/*"],
+      "@/consts/*": ["src/consts/*"],
+      "@/container/*": ["src/container/*"]
+    }
   },
   "include": [
     "src/**/*"
