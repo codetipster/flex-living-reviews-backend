@@ -134,7 +134,6 @@ export class HostawayProvider implements ExternalReviewProvider {
   async fetchFromHostaway(): Promise<ExternalReview[]> {
     const startTime = Date.now();
     let rawReviews: any[] = [];
-    let dataSource = 'mock';
 
     try {
       this.logger.info('Attempting to fetch from Hostaway API');
@@ -147,7 +146,6 @@ export class HostawayProvider implements ExternalReviewProvider {
 
       if (hostawayResponse.data && hostawayResponse.data.status === 'success') {
         rawReviews = hostawayResponse.data.result || [];
-        dataSource = 'hostaway-api';
         this.logger.info(`Fetched ${rawReviews.length} reviews from Hostaway API`, {
           duration: Date.now() - startTime
         });
@@ -163,7 +161,6 @@ export class HostawayProvider implements ExternalReviewProvider {
     if (rawReviews.length === 0) {
       this.logger.info('Using mock data for demonstration');
       rawReviews = this.mockReviewsData;
-      dataSource = 'mock-fallback';
     }
 
     // Transform to match ExternalReview interface
