@@ -2,7 +2,7 @@
   "name": "flex-living-reviews-api",
   "version": "1.0.0",
   "description": "Flex Living Reviews Dashboard API",
-  "main": "dist/server.js",
+  "main": "dist/src/server.js",
   "engines": {
     "npm": "^10.9.2",
     "node": "^22.13.0"
