@@ -6,9 +6,9 @@
   "compilerOptions": {
     "target": "es2021",
     "module": "commonjs",
-    "lib": ["es2021"],
+    "lib": ["es2021", "dom"],
     "outDir": "./dist",
-    "rootDir": "./",
+    "rootDir": "./src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -33,29 +33,27 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./*"],
-      "@/types/*": ["./@types/*"],
-      "@/utils/*": ["./utils/*"],
-      "@/services/*": ["./services/*"],
-      "@/models/*": ["./models/*"],
-      "@/controllers/*": ["./controllers/*"],
-      "@/middlewares/*": ["./middlewares/*"],
-      "@/routes/*": ["./routes/*"],
-      "@/consts/*": ["./consts/*"],
-      "@/enums/*": ["./enums/*"]
+      "@/*": ["*"],
+      "@/types/*": ["@types/*"],
+      "@/utils/*": ["utils/*"],
+      "@/services/*": ["services/*"],
+      "@/database/*": ["database/*"],
+      "@/controllers/*": ["controllers/*"],
+      "@/middlewares/*": ["middlewares/*"],
+      "@/routes/*": ["routes/*"],
+      "@/consts/*": ["consts/*"],
+      "@/container/*": ["container/*"]
     },
     "typeRoots": ["./@types", "./node_modules/@types"]
   },
   "include": [
-    "**/*.ts",
-    "**/*.js"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
     "dist",
-    "**/*.test.ts",
-    "**/*.spec.ts"
+    "tests"
   ]
 }
