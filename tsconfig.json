@@ -8,7 +8,7 @@
     "module": "commonjs",
     "lib": ["es2021", "dom"],
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": ".",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -33,27 +33,28 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["*"],
-      "@/types/*": ["@types/*"],
-      "@/utils/*": ["utils/*"],
-      "@/services/*": ["services/*"],
-      "@/database/*": ["database/*"],
-      "@/controllers/*": ["controllers/*"],
-      "@/middlewares/*": ["middlewares/*"],
-      "@/routes/*": ["routes/*"],
-      "@/consts/*": ["consts/*"],
-      "@/container/*": ["container/*"]
+      "@/*": ["src/*"],
+      "@/types/*": ["src/@types/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/services/*": ["src/services/*"],
+      "@/database/*": ["src/database/*"],
+      "@/controllers/*": ["src/controllers/*"],
+      "@/middlewares/*": ["src/middlewares/*"],
+      "@/routes/*": ["src/routes/*"],
+      "@/consts/*": ["src/consts/*"],
+      "@/container/*": ["src/container/*"]
     },
+    "types": ["node", "jest"],
     "typeRoots": ["./@types", "./node_modules/@types"]
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "tests/**/*"
   ],
   "exclude": [
     "node_modules",
-    "dist",
-    "tests"
+    "dist"
   ]
 }
